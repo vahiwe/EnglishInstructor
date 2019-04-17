@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#66ccff">
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="The Nature of Giving"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/barrier"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/holo_blue_dark"
+                app:layout_constraintBottom_toTopOf="@+id/titlepic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            <ImageView
+                android:id="@+id/titlepic"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/passage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier"
+                app:srcCompat="@drawable/nature" />
+
+            <TextView
+                android:id="@+id/passage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/nature_text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titlepic" />
+
+            <ImageView
+                android:id="@+id/playtext"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/titlepic"
+                app:srcCompat="@drawable/ic_volume_up_black_24dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.85" />
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/quest1card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="25dp"
+                app:cardBackgroundColor="#e5c685"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="16dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passage"
+                app:layout_constraintBottom_toTopOf="@+id/quest2card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:lineSpacingExtra="5dp"
+                        android:text="@string/quest1"
+                        android:textColor="#171714" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioGroup
+                            android:id="@+id/quest_1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/quest_1_id_a"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question1"
+                                android:paddingLeft="4dp"
+                                android:text="Before he comes home from school" />
+
+
+                            <RadioButton
+                                android:id="@+id/quest_1_id_b"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question1"
+                                android:paddingLeft="4dp"
+                                android:text="After he comes home from school" />
+
+
+                            <RadioButton
+                                android:id="@+id/quest_1_id_c"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question1"
+                                android:paddingLeft="4dp"
+                                android:text="Before he goes to school" />
+
+
+                            <RadioButton
+                                android:id="@+id/quest_1_id_d"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question1"
+                                android:paddingLeft="4dp"
+                                android:text="While he is in school" />
+                        </RadioGroup>
+
+                        <ImageView
+                            android:id="@+id/wrong_1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_clear_black_24dp"
+                            android:tint="@color/colorPrimary"
+                            android:visibility="invisible" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/quest2card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e5c685"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="16dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quest1card"
+                app:layout_constraintBottom_toTopOf="@+id/quest3card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:lineSpacingExtra="5dp"
+                        android:text="What is Tom’s father’s job?"
+                        android:textColor="#171714" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioGroup
+                            android:id="@+id/quest_2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/quest_2_id_a"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question2"
+                                android:paddingLeft="4dp"
+                                android:text="Bricklayer" />
+
+
+                            <RadioButton
+                                android:id="@+id/quest_2_id_b"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question2"
+                                android:paddingLeft="4dp"
+                                android:text="Hunter" />
+
+
+                            <RadioButton
+                                android:id="@+id/quest_2_id_c"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question2"
+                                android:paddingLeft="4dp"
+                                android:text="Fisherman" />
+
+
+                            <RadioButton
+                                android:id="@+id/quest_2_id_d"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question2"
+                                android:paddingLeft="4dp"
+                                android:text="Doctor" />
+                        </RadioGroup>
+
+                        <ImageView
+                            android:id="@+id/wrong_2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_clear_black_24dp"
+                            android:tint="@color/colorPrimary"
+                            android:visibility="invisible" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/quest3card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e5c685"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="16dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quest2card"
+                app:layout_constraintBottom_toTopOf="@+id/quest4card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:lineSpacingExtra="5dp"
+                        android:text="What are three things that the boy does to help his mother?"
+                        android:textColor="#171714" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+
+                            <CheckBox
+                                android:id="@+id/quest_3_id_a"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="16dp"
+                                android:onClick="question3"
+                                android:paddingLeft="4dp"
+                                android:text="Feeds the birds" />
+
+                            <CheckBox
+                                android:id="@+id/quest_3_id_b"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question3"
+                                android:paddingLeft="4dp"
+                                android:text="Goes to the stream" />
+
+                            <CheckBox
+                                android:id="@+id/quest_3_id_c"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question3"
+                                android:paddingLeft="4dp"
+                                android:text="Waters the plants" />
+
+                            <CheckBox
+                                android:id="@+id/quest_3_id_d"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question3"
+                                android:paddingLeft="4dp"
+                                android:text="Plays the paino" />
+
+                            <CheckBox
+                                android:id="@+id/quest_3_id_e"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question3"
+                                android:paddingLeft="4dp"
+                                android:text="Washes the plates" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/wrong_3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_clear_black_24dp"
+                            android:tint="@color/colorPrimary"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/quest4card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e5c685"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="16dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quest3card"
+                app:layout_constraintBottom_toTopOf="@+id/quest5card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:lineSpacingExtra="5dp"
+                        android:text="Who sings about the boy?"
+                        android:textColor="#171714" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioGroup
+                            android:id="@+id/quest_4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/quest_4_id_a"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question4"
+                                android:paddingLeft="4dp"
+                                android:text="The birds" />
+
+
+                            <RadioButton
+                                android:id="@+id/quest_4_id_b"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question4"
+                                android:paddingLeft="4dp"
+                                android:text="The wind" />
+
+
+                            <RadioButton
+                                android:id="@+id/quest_4_id_c"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question4"
+                                android:paddingLeft="4dp"
+                                android:text="The plants" />
+
+
+                            <RadioButton
+                                android:id="@+id/quest_4_id_d"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question4"
+                                android:paddingLeft="4dp"
+                                android:text="The insects" />
+                        </RadioGroup>
+
+                        <ImageView
+                            android:id="@+id/wrong_4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_clear_black_24dp"
+                            android:tint="@color/colorPrimary"
+                            android:visibility="invisible" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/quest5card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="#e5c685"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="16dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quest4card"
+                app:layout_constraintBottom_toTopOf="@+id/submit">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:lineSpacingExtra="5dp"
+                        android:text="What is cleared from the garden?"
+                        android:textColor="#171714" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioGroup
+                            android:id="@+id/quest_5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/quest_5_id_a"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question5"
+                                android:paddingLeft="4dp"
+                                android:text="Insects" />
+
+
+                            <RadioButton
+                                android:id="@+id/quest_5_id_b"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question5"
+                                android:paddingLeft="4dp"
+                                android:text="Weeds" />
+
+
+                            <RadioButton
+                                android:id="@+id/quest_5_id_c"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question5"
+                                android:paddingLeft="4dp"
+                                android:text="Dirty" />
+
+
+                            <RadioButton
+                                android:id="@+id/quest_5_id_d"
+                                style="@style/my_checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:onClick="question5"
+                                android:paddingLeft="4dp"
+                                android:text="Firewood" />
+                        </RadioGroup>
+
+                        <ImageView
+                            android:id="@+id/wrong_5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_clear_black_24dp"
+                            android:tint="@color/colorPrimary"
+                            android:visibility="invisible" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/submit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="30dp"
+                app:cardBackgroundColor="#e5c685"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="16dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.68"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quest5card"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="5dp"
+                    android:padding="8dp"
+                    android:onClick="submit"
+                    android:text="Submit"
+                    android:textColor="#171714"
+                    android:textSize="30sp" />
+
+            </android.support.v7.widget.CardView>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
